@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>Практика 4 · Наземная станция</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="pageLayout" stretch="0,3,0,2">
+    <property name="leftMargin">
+     <number>16</number>
+    </property>
+    <property name="topMargin">
+     <number>14</number>
+    </property>
+    <property name="rightMargin">
+     <number>16</number>
+    </property>
+    <property name="bottomMargin">
+     <number>14</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="topLayout" stretch="3,2">
+      <item>
+       <widget class="QGroupBox" name="linkBox">
+        <property name="title">
+         <string>UDP-канал · порт 14540</string>
+        </property>
+        <layout class="QFormLayout" name="linkLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelLinkStatusCaption">
+           <property name="text">
+            <string>Состояние</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="labelLinkStatus" />
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelSenderCaption">
+           <property name="text">
+            <string>Отправитель</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="labelSender" />
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelPacketsCaption">
+           <property name="text">
+            <string>Пакеты</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="labelPackets" />
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="labelPacketTimesCaption">
+           <property name="text">
+            <string>Первый / последний</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="labelPacketTimes" />
+         </item>
+         <item row="4" column="0" colspan="2">
+          <layout class="QHBoxLayout" name="linkButtons">
+           <item>
+            <widget class="QPushButton" name="btnStartLink">
+             <property name="text">
+              <string>Открыть канал</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnStopLink">
+             <property name="text">
+              <string>Закрыть канал</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="telemetryBox">
+        <property name="title">
+         <string>Телеметрия</string>
+        </property>
+        <layout class="QFormLayout" name="telemetryLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelCoordinatesCaption">
+           <property name="text">
+            <string>Широта / долгота</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="labelCoordinates">
+           <property name="text">
+            <string>—</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelAltitudeCaption">
+           <property name="text">
+            <string>Относительная высота</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="labelAltitude">
+           <property name="text">
+            <string>—</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelVerticalSpeedCaption">
+           <property name="text">
+            <string>Вертикальная скорость</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="labelVerticalSpeed">
+           <property name="text">
+            <string>—</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="labelFlightModeCaption">
+           <property name="text">
+            <string>Режим</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="labelFlightMode">
+           <property name="text">
+            <string>—</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QWidget" name="plotArea" native="true">
+      <layout class="QVBoxLayout" name="plotLayout" />
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="commandBox">
+      <property name="title">
+       <string>Команды эмулятора</string>
+      </property>
+      <layout class="QFormLayout" name="commandLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="altitudeCaption">
+         <property name="text">
+          <string>Высота взлёта</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <layout class="QHBoxLayout" name="commandButtons">
+         <item>
+          <widget class="QDoubleSpinBox" name="spinTakeoffAltitude">
+           <property name="decimals">
+            <number>0</number>
+           </property>
+           <property name="minimum">
+            <double>10</double>
+           </property>
+           <property name="maximum">
+            <double>500</double>
+           </property>
+           <property name="singleStep">
+            <double>10</double>
+           </property>
+           <property name="value">
+            <double>50</double>
+           </property>
+           <property name="suffix">
+            <string> м</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnTakeoff">
+           <property name="text">
+            <string>Взлёт</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnLand">
+           <property name="text">
+            <string>Посадка</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelCommandStatusCaption">
+         <property name="text">
+          <string>Результат</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLabel" name="labelCommandStatus">
+         <property name="text">
+          <string>Ожидание команды</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="journalBox">
+      <property name="title">
+       <string>Журнал событий</string>
+      </property>
+      <layout class="QVBoxLayout" name="journalLayout">
+       <item>
+        <widget class="QListWidget" name="listEventLog" />
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources />
+ <connections />
+</ui>
